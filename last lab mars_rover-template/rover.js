@@ -10,17 +10,12 @@ const roverData = new Map();
 
 async function getJson(url) {
     try {
-
         console.log("Request URL:", url);
-
         const response = await fetch(url);
-
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
-
         const json = await response.json();
-
         return json;
     } catch (error) {
         console.error("Error during JSON request:", error.message);
